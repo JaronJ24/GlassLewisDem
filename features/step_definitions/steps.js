@@ -4,10 +4,11 @@ const playwright = require('@playwright/test');
 const {POManager} = require('../../page_objects/POManager');
 
 Given('the user is on the landing page for the WD site', {timeout: 60 * 1000}, async function () {
-    const browser = await playwright.chromium.launch({headless: false});
+    /*const browser = await playwright.chromium.launch({headless: false});
     const context = await browser.newContext();
     this.page = await context.newPage();
     this.poManager = new POManager(this.page);
+    this.homePage = this.poManager.getHomePage();*/
     this.homePage = this.poManager.getHomePage();
     await this.homePage.goToHomePage();
   });

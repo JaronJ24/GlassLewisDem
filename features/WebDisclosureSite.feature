@@ -10,7 +10,7 @@ Scenario Outline: Viewing List of Meetings by Country
 
     Examples:
         | countryName |
-        | Belgium     |
+        | Belgium       |
         | Ireland     |
 
 
