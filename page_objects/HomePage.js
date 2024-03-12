@@ -11,7 +11,6 @@ class HomePage {
         this.gridRows = page.locator("tbody tr");
         this.gridColumns = page.locator("tr th");
         this.nextPageButton = page.locator("a[title='Go to the next page']");
-        //this.companyNameLink = page.getByLabel("1&1 AG");
     
     }
     
@@ -40,6 +39,7 @@ class HomePage {
     async verifyListAreFilteredByCountry(countryName){
         await expect(this.gridRows.last()).toContainText(countryName);
         const columnIndex = await this.getColumnIndex("Country");
+        //Note: Function below checks if the country name value from the selection is the same throughout the list
         await this.checkCountryByRows(columnIndex, countryName);
     }
 
@@ -48,6 +48,7 @@ class HomePage {
         const columnIndex = await this.getColumnIndex("Country");
         const rows = await this.gridRows;
         const firstRowValue = await rows.first().locator("td").nth(columnIndex).textContent();
+        //Note: Function below checks if the country name value retrieved in the first row is the same throughout the list
         await this.checkCountryByRows(columnIndex, firstRowValue);
     }
 
@@ -84,6 +85,7 @@ class HomePage {
             isVisibleFlag = await this.page.getByLabel(companyName).isVisible()
             if (isVisibleFlag == false){
                 const nextPageButtonClass = await this.nextPageButton.getAttribute("class");
+                    //Note: If Else condition below checks whether the Next Page button is disabled (meaning already in the last page)
                     if (!nextPageButtonClass.includes("k-state-disabled")){
                         await this.nextPageButton.click();
                         await this.gridRows.last().isVisible();

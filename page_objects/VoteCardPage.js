@@ -11,8 +11,8 @@ constructor(page)
 
 async findVoteCardPage(companyName)
 {
-    await expect(this.companyNameLogo).toHaveText(companyName);
     await expect(this.page).toHaveTitle(/Sample Disclosure/);
+    await expect(this.companyNameLogo).toHaveText(companyName);
 }
 
 async checkCompanyBanner(companyName)

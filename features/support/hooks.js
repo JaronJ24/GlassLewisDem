@@ -4,7 +4,7 @@ const {Before,AfterStep,Status} = require('@cucumber/cucumber');
 const { truncate } = require('fs/promises');
 
 Before ({timeout: 60 * 1000}, async function () {
-    const browser = await playwright.chromium.launch({headless: false});
+    const browser = await playwright.chromium.launch({headless: true});
     const context = await browser.newContext();
     this.page = await context.newPage();
     this.poManager = new POManager(this.page);
