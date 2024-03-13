@@ -1,4 +1,4 @@
-Feature: Web Disclosure Site
+Feature: Public Voting Disclosure
 
 Scenario Outline: Viewing List of Meetings by Country 
     Given the user is on the landing page for the WD site
