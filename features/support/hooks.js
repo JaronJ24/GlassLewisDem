@@ -12,7 +12,7 @@ Before ({timeout: 60 * 1000}, async function () {
 
 AfterStep ({timeout: 60 * 1000}, async function ({result, pickle}) {
     if (result.status === Status.FAILED){
-        const image = await this.page.screenshot({path: "../../test-results/screenshots/${pickle.name}.png"});
-        await this.attach(image, "image/png");
+        const image = await this.page.screenshot({path: './test-results/screenshot/' + pickle.name +'.png'});
+        this.attach(image, "image/png");
     }
 });
