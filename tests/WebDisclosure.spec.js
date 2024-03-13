@@ -1,3 +1,7 @@
+/*
+    Note: This is only for testing/debugging. Please use the feature file.
+*/
+
 const {test, expect} = require('@playwright/test');
 
 test("TC01", async ({page}) =>{
