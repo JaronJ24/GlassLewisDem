@@ -6,7 +6,7 @@
   "scripts": {
     "WD_Cucumber": "npx cucumber-js --exit --format html:cucumber-report.html",
     "WD_Cucumber_SingleFeature": "npx cucumber-js ./features/WebDisclosureSite.feature -exit --format html:cucumber-report.html",
-    "Playwright Test": "npx playwright test --headed --project=chromium"
+    "Playwright_Test": "npx playwright test --headed --project=chromium"
   },
   "keywords": [],
   "author": "",

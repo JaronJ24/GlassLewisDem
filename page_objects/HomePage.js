@@ -31,7 +31,7 @@ class HomePage {
         await this.countryCheckbox.nth(1).click();
     }
 
-    async filterCountryList(countryName)
+    async filterCountryList()
     {
         await this.countryUpdateButton.click();
     }
